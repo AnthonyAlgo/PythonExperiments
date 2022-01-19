@@ -1,5 +1,5 @@
 import pandas as pd
-
+from pyspark.sql import dataframe 
 mydataset = {
   'cars': ["BMW", "Volvo", "Ford"], 
   'rating': [3, 7, 0]
@@ -24,3 +24,6 @@ def test_map(x: int):
     return 1
 transformed_df = data_frame['rating'].map(test_map)
 print(transformed_df)
+
+df = spark.createDataFrame([(1, 1.0), (2, 2.0)], ["int", "float"])
+print(df)
